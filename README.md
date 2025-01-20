@@ -23,7 +23,11 @@ Para utilizar a plicação serão necessários:
    ```bash
    flutter pub get
    ```
+4. Ajuste de URLs da API
+   Caso vá utilizar um dispositivos fisico para emulação do aplicativo, seguia a seguinte instrução:
    
+   - Vá ao arquivo lib/api/api.dart e ajuste a variavel **url** com o endereço de ip e porta na qual o servidor com a api do laravel esteja rodando. 
+     
 ## Executando o Projeto
 
 1. Execute o aplicativo Flutter:
