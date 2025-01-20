@@ -26,7 +26,7 @@ Para utilizar a plicação serão necessários:
 4. Ajuste de URLs da API
    Caso vá utilizar um dispositivos fisico para emulação do aplicativo, seguia a seguinte instrução:
    
-   - Vá ao arquivo lib/api/api.dart e ajuste a variavel **url** com o endereço de ip e porta na qual o servidor com a api do laravel esteja rodando. 
+   - Vá ao arquivo ``lib/api/api.dart`` e ajuste a variavel **url** com o endereço de ip e porta na qual o servidor com a api do laravel esteja rodando. 
      
 ## Executando o Projeto
 
