@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     return {};
   }
 
-  //FUNÇÃO DE RETORNO PARA HOME
+  //MODAL DE DELEÇÃO
   void showModalDeletar(BuildContext context, String modulo, String id) {
     Get.dialog(
       Dialog(
@@ -163,7 +163,10 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       backgroundColor: Colors.grey[200],
       appBar: HeaderWidget(
         title: 'Home',
-        rightAction: () => Get.offNamed('/login'),
+        rightAction: () {
+          Get.delete<HomeController>();
+          Get.offNamed('/login');
+        },
       ),
       body: RefreshIndicator(
         onRefresh: buscarDados,
@@ -323,11 +326,23 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                                         ),
                                         confirmDismiss: (direction) async {
                                           if (direction == DismissDirection.startToEnd) {
-                                            //EDITAR USUARIO
-                                            navegateForm('Editar', usuarios[index].id);
+                                            //VERIFICAR SE USUARIO TEM PERMISSÕES
+                                            if(usuario.perfil != null && usuario.perfil!.id == 1){
+                                              //EDITAR USUARIO
+                                              navegateForm('Editar', usuarios[index].id);
+                                            }else{
+                                              //EXIBIR MENSAGEM DE FALTA DE PERMISSÃO
+                                              AppHelper.alertMessage('Você não tem permissão para Editar esses registros', type: 'Error');
+                                            }
                                           } else if (direction == DismissDirection.endToStart) {
-                                            //EXIBIR MODAL DE DELETAR
-                                            showModalDeletar(context, 'Usuario', usuarios[index].id.toString());
+                                            //VERIFICAR SE USUARIO TEM PERMISSÕES
+                                            if(usuario.perfil != null && usuario.perfil!.id == 1){
+                                              //EXIBIR MODAL DE DELETAR
+                                              showModalDeletar(context, 'Usuario', usuarios[index].id.toString());
+                                            }else{
+                                              //EXIBIR MENSAGEM DE FALTA DE PERMISSÃO
+                                              AppHelper.alertMessage('Você não tem permissão para Deletar esses registros', type: 'Error');
+                                            }
                                           }
                                           return false;
                                         },

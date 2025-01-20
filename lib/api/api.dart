@@ -1,6 +1,6 @@
 class AppApi {
   //URL BASE DAS REQUISIÇÕES
-  static final url = 'http://localhost:8000/api/';
+  static final url = 'http://10.1.10.154:8000/api/';
   //ROTAS DE USUÁRIO
   static const listarUsuario = 'usuarios';
   static const salvarUsuario = 'usuarios/salvar';

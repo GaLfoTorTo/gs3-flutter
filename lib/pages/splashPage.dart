@@ -28,15 +28,7 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left:40),
-              child: Image.asset('assets/logo.jpg'),
-            ),
-          ],
-        )
+        child: Image.asset('assets/logo.jpg'),
       ),
     );
   }

@@ -45,10 +45,7 @@ class AuthController extends GetxController{
         //RESGATAR DADOS DO USUARIO LOGADO
         UsuarioModel usuario = UsuarioModel.fromMap(response.data['usuario']);
         //INICIALIZAR CONTROLLER HOMEPAGE
-        Get.put(
-          HomeController(usuario: usuario),
-          permanent: true,
-        );
+        Get.put(HomeController(usuario: usuario));
         //RETORNAR MENSAGEM DE SUCESSO NO SALVAMENTO
         return {
           'status': 200,
