@@ -13,11 +13,11 @@ Para utilizar a plicação serão necessários:
 ### Configuração do projeto
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/flutter-laravel-app.git
+   git clone https://github.com/GaLfoTorTo/gs3-flutter.git
    ```
 2. Navegue para o diretório do projeto Flutter:
    ```bash
-   cd flutter-laravel-app
+   cd gs3-flutter
    ```
 3. Instale as dependências do Flutter:
    ```bash
@@ -45,5 +45,5 @@ Para utilizar a plicação serão necessários:
 
 1. Para fazer autenticação com usuario padrão no app utilize das seguintes credenciais:
 
-   -**Usuário**: admin@teste.com;
-   -**senha**: admin@1234
+   - **Usuário**: admin@teste.com;
+   - **senha**: admin@1234
